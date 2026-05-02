@@ -25,9 +25,32 @@
   width: 80px;
   height: 2px;
   background-color: var(--red-accent);
-  margin: 16px 0 24px 0;
-  display: block;
+  margin: 16px 0 24px;
+  position: relative;
 }
+    .accent-line::before,
+.accent-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--red-accent);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.accent-line::before {
+  left: -10px;
+}
+    .accent-line::after {
+  right: -10px;
+}
+    .nav-dot { 
+      color: var(--red-accent); 
+      margin: 0 10px; 
+      font-size: 12px; 
+      opacity: 0.8; 
+    }
 
     * {
       box-sizing: border-box;
@@ -403,12 +426,16 @@
 <body>
   <header>
     <div class="site-wrap nav">
-      <a href="#top" class="logo">Eric Saner Tattoo</a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#booking">Booking</a>
-      </nav>
+    <a href="#top" class="logo">
+  Eric Saner Tattoo <span class="nav-dot">✦</span>
+</a>
+      <nav class="nav-links">
+  <a href="#work">Work</a>
+  <span class="nav-dot">✦</span>
+  <a href="#about">About</a>
+  <span class="nav-dot">✦</span>
+  <a href="#booking">Booking</a>
+</nav>
     </div>
   </header>
 
