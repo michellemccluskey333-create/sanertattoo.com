@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eric Saner | Custom Tattoo Artist</title>
+  <title>Eric Saner | Custom Tattooer </title>
   <meta name="description" content="Custom tattoo work by Eric Saner. Portfolio, booking information, and contact details." />
 
   <style>
@@ -14,6 +14,7 @@
   --text: #f4e6b0;
   --muted: #d8c78f;
   --accent: #f0c44f;
+  --red-accent: #b23a2a;
   --accent-soft: rgba(240, 196, 79, 0.16);
   --red: #d94a2b;
   --orange: #f07a2f;
@@ -158,7 +159,9 @@
       transform: translateY(-2px);
       box-shadow: var(--shadow);
     }
-
+.button.primary:hover {
+  box-shadow: 0 0 0 2px var(--red-accent);
+}
     .hero-card {
       background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       border: 1px solid var(--border);
@@ -406,7 +409,12 @@
     <section class="site-wrap hero">
       <div>
         <div class="eyebrow">Custom tattoo work</div>
-        <h1>Bold work. Honest craft.</h1>
+        <div class="accent-line"></div>
+       <h1>
+  Bold work.<br>
+  Honest craft.
+</h1>
+        <div class="accent-line"></div>
         <p>
           Custom tattoos shaped with intention, strong composition, rooted in tradition.  
           Built on making good, honest tattoos. Based in Omaha. Booking inquiries welcome.
