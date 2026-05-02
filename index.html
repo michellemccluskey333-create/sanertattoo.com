@@ -21,29 +21,25 @@
   --border: rgba(240, 196, 79, 0.28);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
 }
-    .accent-line {
-  width: 80px;
+.accent-line {
+  width: 260px;
   height: 2px;
-  background-color: var(--red-accent);
-  margin: 16px 0 24px;
-  position: relative;
-}
-    .accent-line::before,
-.accent-line::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 6px;
-  height: 6px;
   background: var(--red-accent);
-  transform: translateY(-50%) rotate(45deg);
+  margin: 18px 0 24px;
+  position: relative;
 }
 
 .accent-line::before {
-  left: -10px;
-}
-    .accent-line::after {
-  right: -10px;
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -52%);
+  color: var(--red-accent);
+  background: var(--bg);
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 1;
 }
     .nav-dot { 
       color: var(--red-accent); 
@@ -427,7 +423,7 @@
   <header>
     <div class="site-wrap nav">
     <a href="#top" class="logo">
-  Eric Saner Tattoo <span class="nav-dot">✦</span>
+  <span class="nav-dot">✦</span> Eric Saner Tattoo <span class="nav-dot">✦</span>
 </a>
       <nav class="nav-links">
   <a href="#work">Work</a>
