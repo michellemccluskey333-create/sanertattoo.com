@@ -30,12 +30,23 @@
 .hero-title span {
   display: block;
 }
+.hero-heading {
+  display: inline-block;
+}
 
+.hero-heading .eyebrow {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.line-two {
+  display: inline-block;
+}
 .accent-line {
-  width: 260px;
+  width: 180px;              /* tweak this by eye */
   height: 2px;
   background: var(--red-accent);
-  margin: 18px 0 24px;
+  margin: 12px auto 0;
   position: relative;
 }
 .accent-line::before {
@@ -43,12 +54,11 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -52%);
+  transform: translate(-50%, -50%);
   color: var(--red-accent);
   background: var(--bg);
-  padding: 0 10px;
-  font-size: 14px;
-  line-height: 1;
+  padding: 0 8px;
+  font-size: 12px;
 }
     .nav-dot { 
       color: var(--red-accent); 
@@ -444,17 +454,16 @@
     </div>
   </header>
 
-  <main id="top">
-    <section class="site-wrap hero">
-      <div>
-        <div class="eyebrow">Custom tattoo work</div>
-    
-    <h1 class="hero-title">
-  <span>Bold work.</span>
-  <span>Honest craft.</span>
-</h1>
+  <div class="hero-heading">
+  <div class="eyebrow">Custom tattoo work</div>
 
-<div class="accent-line"></div>
+  <h1 class="hero-title">
+    <span>Bold work.</span><br>
+    <span class="line-two">Honest craft.</span>
+  </h1>
+
+  <div class="accent-line"></div>
+</div>
        
         <p>
           Custom tattoos shaped with intention, strong composition, rooted in tradition.  
