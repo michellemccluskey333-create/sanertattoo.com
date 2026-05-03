@@ -47,7 +47,6 @@
   font-size: 14px;
   line-height: 1;
 }
-   
     .nav-dot { 
       color: var(--red-accent); 
       margin: 0 10px; 
@@ -189,13 +188,22 @@ h1 span {
   border-color: #f0c44f;
   font-weight: 700;
 }
+/* Base hover for ALL buttons */
+.button:hover {
+  border-color: var(--red-accent);
+  color: var(--red-accent);
 
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 0 2px rgba(178, 58, 42, 0.4);
+}
+
+/* Primary (gold) button hover */
 .button.primary:hover {
-  box-shadow: 0 0 0 2px var(--red-accent);
+  background: linear-gradient(135deg, #f0c44f, #b23a2a);
+  border-color: var(--red-accent);
+  color: #090806;
+}
 }
     .hero-card {
       background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
