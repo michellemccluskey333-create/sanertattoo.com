@@ -23,23 +23,30 @@
 }
 
 .accent-line {
-  width: 220px;
+  width: 320px;
   height: 2px;
-  background: var(--red-accent);
-  margin: 8px 0 28px;
+  margin: 20px 0 20px;   /* equal spacing above and below */
   position: relative;
+
+  /* THIS creates the fade */
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--red-accent),
+    transparent
+  );
 }
 .accent-line::before {
   content: "✦";
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -52%);
+  transform: translate(-50%, -50%);
   color: var(--red-accent);
-  background: var(--bg);
-  padding: 0 10px;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1;
 }
+   
     .nav-dot { 
       color: var(--red-accent); 
       margin: 0 10px; 
