@@ -285,8 +285,14 @@
   max-width: 980px;
 }
 
-.portfolio-hero .accent-line {
-  margin-left: 320px;
+/* Centers accent line under headline */
+.title-wrap {
+  display: inline-block;
+}
+
+.title-wrap .accent-line {
+  margin-left: auto;
+  margin-right: auto;
 }
 /* =========================================================
    PORTFOLIO GRID
@@ -589,11 +595,15 @@
       <div class="portfolio-hero">
       <div class="eyebrow">Portfolio</div>
 
-      <h1>
-        <span>Tattoo work.</span>
-      </h1>
+    <div class="title-wrap">
 
-      <div class="accent-line"></div>
+  <h1>
+    <span>Tattoo work.</span>
+  </h1>
+
+  <div class="accent-line"></div>
+
+</div>
 
     <p style="max-width: 620px; color: var(--muted); font-size: 1.15rem;">
       Custom tattoo work rooted in bold imagery, movement, and long-lasting composition.
