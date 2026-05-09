@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Work | Eric Saner Tattoo</title>
+  <meta name="description" content="Tattoo portfolio and selected work by Eric Saner." />
+
+  <style>
+    /* Use the same CSS from your index page here */
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="site-wrap nav">
+      <a href="index.html" class="logo">
+        <span class="nav-dot">✦</span> Eric Saner Tattoo <span class="nav-dot">✦</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="work.html">Work</a>
+        <span class="nav-dot">✦</span>
+        <a href="about.html">About</a>
+        <span class="nav-dot">✦</span>
+        <a href="booking.html">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PORTFOLIO PAGE HERO -->
+    <section class="site-wrap" style="padding: 110px 0 50px;">
+      <div class="eyebrow">Portfolio</div>
+      <h1>
+        <span>Tattoo work.</span>
+      </h1>
+
+      <div class="accent-line"></div>
+
+      <p style="max-width: 620px; color: var(--muted); font-size: 1.15rem;">
+        Custom tattoo work rooted in bold imagery, movement, and long-lasting composition.
+      </p>
+    </section>
+
+    <!-- PORTFOLIO GRID -->
+    <section>
+      <div class="site-wrap">
+        <div class="portfolio-grid">
+
+          <figure class="portfolio-item">
+            <img src="frog.jpeg" alt="Frog tattoo by Eric Saner" />
+            <figcaption class="caption">Blackwork / illustrative piece</figcaption>
+          </figure>
+
+           <figure class="portfolio-item">
+            <img src="sheep.jpeg" alt="Sheep in wolf's clothing tattoo by Eric Saner" />
+            <figcaption class="caption">Sheep in wolf's clothing</figcaption>
+          </figure>
+
+          <figure class="portfolio-item">
+            <img src="skull.jpeg" alt="Traditional skull tattoo by Eric Saner" />
+            <figcaption class="caption">Traditional skull</figcaption>
+          </figure>
+
+          <figure class="portfolio-item">
+            <img src="faces.JPG" alt="Large custom composition tattoo by Eric Saner" />
+            <figcaption class="caption">Large custom composition</figcaption>
+          </figure>
+
+          <figure class="portfolio-item">
+            <img src="maryJPG.JPG" alt="Healed tattoo detail by Eric Saner" />
+            <figcaption class="caption">Healed work / detail</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FLASH CTA -->
+<section>
+  <div class="site-wrap">
+
+    <div class="booking">
+
+      <div>
+        <div class="eyebrow">Flash Designs</div>
+
+        <h2>Available flash and ready-to-tattoo concepts.</h2>
+
+        <p>
+          Browse available flash, repeatable designs,
+          and occasional limited-release pieces.
+        </p>
+      </div>
+
+      <a class="button primary" href="flash.html">
+        Explore Flash Gallery
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- BOOKING CTA -->
+    <section>
+      <div class="site-wrap">
+        <div class="booking">
+          <div>
+            <div class="eyebrow">Booking</div>
+            <h2>Want to start a tattoo idea?</h2>
+            <p>
+              Send details for a custom tattoo request, including your idea, placement,
+              approximate size, reference images, and preferred timing.
+            </p>
+          </div>
+
+          <a class="button primary" href="booking.html">Request Custom Work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="site-wrap footer-row">
+      <span>© <span id="year"></span> Eric Saner Tattoo</span>
+      <span>Omaha, Nebraska • Custom Tattoo Work</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
