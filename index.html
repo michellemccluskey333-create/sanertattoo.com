@@ -281,21 +281,34 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  align-items: start;
 }
 
 .portfolio-item {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: var(--card);
+  background: #0a0a0a;
   border: 1px solid var(--border);
+
+
+  /* fixed card size */
+  aspect-ratio: 1 / 1.18;
+
+  /* centers images nicely */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 12px;
 }
 
 .portfolio-item img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+
+  /* THIS is the key */
+  object-fit: contain;
+
   filter: grayscale(18%);
   transition: transform 0.35s ease, filter 0.35s ease;
 }
