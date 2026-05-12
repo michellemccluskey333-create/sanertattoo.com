@@ -202,7 +202,7 @@
   justify-content: center;
   align-items: stretch;
   gap: 24px;
-  flex-wrap: nowrap;
+flex-wrap: wrap;
   margin-top: 40px;
   width: 100%;
 }
@@ -305,7 +305,9 @@
  .style-focus {
   padding: 70px 0 90px;
 }
-
+.style-focus .experience-card {
+  display: block;
+}
 .style-intro {
   margin-bottom: 28px;
   text-align: center;
@@ -349,8 +351,8 @@
       }
 
       .style-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+  justify-content: center;
+  }
     }
 
     @media (max-width: 520px) {
@@ -366,9 +368,10 @@
         width: 260px;
       }
 
-      .style-grid {
-        grid-template-columns: 1fr;
-      }
+     .style-grid {
+  flex-direction: column;
+  align-items: center;
+}
 
       .experience-card {
         padding: 28px 24px;
