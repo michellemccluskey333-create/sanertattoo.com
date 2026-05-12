@@ -200,32 +200,29 @@
 .style-grid {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 24px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 40px;
 }
 
 .style-card {
   width: 220px;
-  min-height: 220px;
-
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  background: rgba(17, 16, 13, 0.82);
+  min-height: 240px;
+  flex: 0 0 220px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-
-  gap: 16px;
-  padding: 24px;
+  align-items: center;
 
   text-align: center;
-  text-decoration: none;
+  padding: 28px 20px;
 
-  color: var(--accent);
-  transition: all 0.25s ease;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  transition: all 0.3s ease;
 }
 
 .style-card:hover {
@@ -262,6 +259,9 @@
       gap: 52px;
       align-items: start;
     }
+    .about-copy-grid h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  }
 
     .about-copy-text p {
       color: var(--muted);
@@ -305,15 +305,15 @@
       padding: 70px 0 90px;
     }
 
-    .style-intro {
-      margin-bottom: 28px;
-    }
+  .style-intro {
+  margin-bottom: 28px;
+  text-align: center;
+}
 
-    .style-intro p {
-      color: var(--muted);
-      max-width: 580px;
-      margin-top: 12px;
-    }
+.style-intro p {
+  margin-left: auto;
+  margin-right: auto;
+}
 
     footer {
       padding: 32px 0;
@@ -417,33 +417,37 @@
     </section>
 
     <!-- ABOUT ME -->
-    <section class="about-copy-section">
-      <div class="site-wrap about-copy-grid">
-        <div>
-          <div class="eyebrow">About Me</div>
-          <h2>Built on strong imagery, clean execution, and honest tattooing.</h2>
-        </div>
+<section class="about-copy-section">
+  <div class="site-wrap">
+    <div class="experience-card about-copy-grid">
 
-        <div class="about-copy-text">
-          <p>
-            A New York native and versatile shop veteran since 2010, I specialize in bold,
-            high-movement imagery rooted in Western and Japanese traditional styles.
-          </p>
-
-          <p>
-            My work is influenced by the raw illustrative power of Frank Frazetta,
-            alongside the technical foundations of tattooers like Ed Hardy,
-            Brian Bruno, Danielle Hoang, and Tim Lehi.
-          </p>
-
-          <p>
-            From custom lettering and fine-tuned script to large-scale compositions
-            in color or black and gray, I aim to translate every idea into a tattoo
-            that hits hard and stands the test of time.
-          </p>
-        </div>
+      <div>
+        <div class="eyebrow">About Me</div>
+        <h2>Built on strong imagery, clean execution, and honest tattooing.</h2>
       </div>
-    </section>
+
+      <div class="about-copy-text">
+        <p>
+          A New York native and versatile shop veteran since 2010, I specialize in bold,
+          high-movement imagery rooted in Western and Japanese traditional styles.
+        </p>
+
+        <p>
+          My work is influenced by the raw illustrative power of Frank Frazetta,
+          alongside the technical foundations of tattooers like Ed Hardy,
+          Brian Bruno, Danielle Hoang, and Tim Lehi.
+        </p>
+
+        <p>
+          From custom lettering and fine-tuned script to large-scale compositions
+          in color or black and gray, I aim to translate every idea into a tattoo
+          that hits hard and stands the test of time.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- EXPERIENCE -->
     <section class="experience-section">
