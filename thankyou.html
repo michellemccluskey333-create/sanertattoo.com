@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Thank You | Eric Saner Tattoo</title>
+
+  <style>
+    :root {
+      --bg: #080806;
+      --text: #f4e6b0;
+      --muted: #d8c78f;
+      --accent: #f0c44f;
+      --red-accent: #b23a2a;
+      --border: rgba(240, 196, 79, 0.28);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background: radial-gradient(circle at top, #222 0%, var(--bg) 44%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .thank-you-card {
+      width: min(900px, 100%);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 64px 48px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.5)),
+        radial-gradient(circle at center, rgba(240,196,79,0.12), transparent 55%);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-shadow: 3px 3px 0 rgba(217, 74, 43, 0.35);
+      margin-bottom: 24px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto 18px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 38px;
+    }
+
+    .button {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      padding: 16px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .button.primary {
+      background: var(--red-accent);
+      color: #080806;
+      border: 1px solid var(--red-accent);
+    }
+
+    .button.secondary {
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px rgba(178, 58, 42, 0.22);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="thank-you-card">
+    <div class="eyebrow">Request Received</div>
+
+    <h1>Thank you.</h1>
+
+    <p>
+      Your consultation request has been submitted.
+    </p>
+
+    <p>
+      If you reserved a consultation time, no additional coordination is needed.
+    </p>
+
+    <p>
+      If you did not select a time slot, Eric will follow up directly to coordinate availability.
+    </p>
+
+    <div class="button-row">
+      <a href="index.html" class="button primary">Return Home</a>
+      <a href="work.html" class="button secondary">View Work</a>
+      <a href="booking.html" class="button secondary">Back to Booking</a>
+    </div>
+  </main>
+</body>
+</html>
