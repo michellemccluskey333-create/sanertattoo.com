@@ -713,13 +713,18 @@
 
        <div class="booking-actions"> 
                     <!--    <a class="button" href="flash.html">Flash Gallery</a>  -->
-           <a 
-              class="button primary"
-              href="#"
-              data-tally-open="GxXJ6o"
-              >
-              Request Consultation
-              </a>
+         <a
+          class="button primary"
+          href="#"
+          data-tally-open="GxXJ6o"
+          data-tally-width="400"
+          data-tally-overlay="1"
+          data-tally-emoji-text="🤘🏻"
+          data-tally-emoji-animation="spin"
+          >
+          Request Consultation
+          </a>
+          
             </div> 
           </div>
 
