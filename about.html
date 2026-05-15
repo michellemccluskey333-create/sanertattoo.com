@@ -193,7 +193,61 @@
 
   box-shadow: var(--shadow);
 }
+/* =========================================================
+   STYLE FOCUS SECTION
+========================================================= */
 
+.style-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+flex-wrap: wrap;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.style-card {
+  width: 220px;
+  min-height: 240px;
+  flex: 0 0 220px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 28px 20px;
+
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  transition: all 0.3s ease;
+}
+
+.style-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red-accent);
+  box-shadow: 0 0 24px rgba(178, 58, 42, 0.18);
+}
+
+.style-icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: 28px;
+}
+
+.style-card span {
+  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+    
     /* ABOUT ME */
     .about-copy-section {
       padding: 70px 0;
@@ -206,6 +260,9 @@
       gap: 52px;
       align-items: start;
     }
+    .about-copy-grid h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  }
 
     .about-copy-text p {
       color: var(--muted);
@@ -222,9 +279,9 @@
 
     .experience-card {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+     grid-template-columns: 1.1fr 0.9fr;
       gap: 46px;
-      align-items: center;
+    align-items: start;
       border: 1px solid var(--border);
       border-radius: 26px;
       padding: 34px 42px;
@@ -245,62 +302,25 @@
     }
 
     /* STYLE FOCUS */
-    .style-focus {
-      padding: 70px 0 90px;
-    }
-
-    .style-intro {
-      margin-bottom: 28px;
-    }
-
-    .style-intro p {
-      color: var(--muted);
-      max-width: 580px;
-      margin-top: 12px;
-    }
-
-    .style-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
-  width: 100%;
+ .style-focus {
+  padding: 70px 0 90px;
 }
-
-.style-card {
-  min-width: 0;
-  min-height: 130px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: rgba(17, 16, 13, 0.82);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  padding: 18px;
-  text-align: center;
-  color: var(--accent);
-  font-family: Arial, sans-serif;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.style-icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+.style-focus .experience-card {
   display: block;
 }
+.style-intro {
+  margin-bottom: 28px;
+  text-align: center;
+}
 
-    .style-card:hover {
-      border-color: var(--red-accent);
-      color: var(--red-accent);
-      transform: translateY(-2px);
-      box-shadow: 0 0 0 2px rgba(178, 58, 42, 0.28);
-    }
+.style-intro h2 {
+  margin-bottom: 12px;
+}
+
+.style-intro p {
+  margin-left: auto;
+  margin-right: auto;
+}
 
     footer {
       padding: 32px 0;
@@ -331,8 +351,8 @@
       }
 
       .style-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+  justify-content: center;
+  }
     }
 
     @media (max-width: 520px) {
@@ -348,9 +368,10 @@
         width: 260px;
       }
 
-      .style-grid {
-        grid-template-columns: 1fr;
-      }
+     .style-grid {
+  flex-direction: column;
+  align-items: center;
+}
 
       .experience-card {
         padding: 28px 24px;
@@ -373,7 +394,7 @@
         <span class="nav-dot">✦</span>
         <a href="about.html">About</a>
         <span class="nav-dot">✦</span>
-       <a href="booking.html">Booking</a>
+       <a href="index.html#booking">Booking</a>
       </nav>
     </div>
   </header>
@@ -404,99 +425,103 @@
     </section>
 
     <!-- ABOUT ME -->
-    <section class="about-copy-section">
-      <div class="site-wrap about-copy-grid">
-        <div>
-          <div class="eyebrow">About Me</div>
-          <h2>Built on strong imagery, clean execution, and honest tattooing.</h2>
-        </div>
+<section class="about-copy-section">
+  <div class="site-wrap">
+    <div class="experience-card about-copy-grid">
 
-        <div class="about-copy-text">
-          <p>
-            A New York native and versatile shop veteran since 2010, I specialize in bold,
-            high-movement imagery rooted in Western and Japanese traditional styles.
-          </p>
-
-          <p>
-            My work is influenced by the raw illustrative power of Frank Frazetta,
-            alongside the technical foundations of tattooers like Ed Hardy,
-            Brian Bruno, Danielle Hoang, and Tim Lehi.
-          </p>
-
-          <p>
-            From custom lettering and fine-tuned script to large-scale compositions
-            in color or black and gray, I aim to translate every idea into a tattoo
-            that hits hard and stands the test of time.
-          </p>
-        </div>
+      <div>
+        <div class="eyebrow">About Me</div>
+        <h2>Built on strong imagery, clean execution, and honest tattooing.</h2>
       </div>
-    </section>
 
-    <!-- EXPERIENCE -->
-    <section class="experience-section">
-      <div class="site-wrap experience-card">
-        <div>
-          <div class="eyebrow">The Experience</div>
-          <h2>Respectful, clear, and easy to be around.</h2>
-        </div>
+      <div class="about-copy-text">
+        <p>
+          A New York native and versatile shop veteran since 2010, I specialize in bold,
+          high-movement imagery rooted in Western and Japanese traditional styles.
+        </p>
 
         <p>
-          Good tattooing is more than the final image. Grounded,
-          collaborative— with clear communication from the first idea
-          through the final tattoo.   
+          My work is influenced by the raw illustrative power of Frank Frazetta,
+          alongside the technical foundations of tattooers like Ed Hardy,
+          Brian Bruno, Danielle Hoang, and Tim Lehi.
+        </p>
+
         <p>
-          Every session is approached with professionalism and  respect
-          to make the experience comfortable from consultation to final tattoo.
-          </p>
+          From custom lettering and fine-tuned script to large-scale compositions
+          in color or black and gray, I aim to translate every idea into a tattoo
+          that hits hard and stands the test of time.
         </p>
       </div>
-    </section>
-
-    <!-- STYLE FOCUS -->
-<section class="style-focus">
-  <div class="site-wrap">
-
-    <div class="style-intro">
-      <div class="eyebrow">Style Focus</div>
-
-      <p>
-        Custom designs, clean execution, and tattoos built to age well.
-      </p>
-    </div>
-
-    <!-- GRID START -->
-    <div class="style-grid">
-
-      <div class="style-card">
-        <img src="./Images/about/rose-1.png" alt="Western Traditional icon" class="style-icon">
-        <span>Western Traditional</span>
-      </div>
-
-      <div class="style-card">
-        <img src="./Images/about/dragon-1.png" alt="Japanese Irezumi icon" class="style-icon">
-        <span>Japanese Irezumi</span>
-      </div>
-
-      <div class="style-card">
-        <img src="./Images/about/tiger-1.png" alt="Large scale icon" class="style-icon">
-        <span>Large-Scale</span>
-      </div>
-
-      <div class="style-card">
-        <img src="./Images/about/skull-1.png" alt="Black and gray icon" class="style-icon">
-        <span>Black & Gray</span>
-      </div>
-
-      <div class="style-card">
-        <img src="./Images/about/e-1.png" alt="Custom lettering icon" class="style-icon">
-        <span>Custom Lettering</span>
-      </div>
 
     </div>
-    <!-- GRID END -->
-
   </div>
 </section>
+
+          
+<!-- EXPERIENCE -->
+<section class="experience-section">
+  <div class="site-wrap">
+    <div class="experience-card">
+
+      <div>
+        <div class="eyebrow">The Experience</div>
+
+        <h2>
+          Respectful, clear, and easy to be around.
+        </h2>
+      </div>
+
+      <div>
+        <p>
+          Good tattooing is more than the final image. Grounded,
+          collaborative—with clear communication from the first idea
+          through the final tattoo.
+        </p>
+
+        <p>
+          Every session is approached with professionalism and respect
+          to make the experience comfortable from consultation to final tattoo.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STYLE FOCUS -->
+<section class="style-focus">
+  <div class="site-wrap">
+    <div class="experience-card">
+      <div style="width: 100%;">
+
+        <div class="style-intro">
+          <div class="eyebrow">Style Focus</div>
+          <h2>Specialties & Style Focus</h2>
+          <p>Custom designs, clean execution, and tattoos built to age well.</p>
+        </div>
+
+        <div class="style-grid">
+          <a class="style-card" href="work.html#western-traditional">
+            <img src="./Images/about/rose-1.png" alt="Western Traditional icon" class="style-icon">
+            <span>Western Traditional</span>
+          </a>
+
+          <a class="style-card" href="work.html#japanese-irezumi">
+            <img src="./Images/about/dragon-1.png" alt="Japanese Irezumi icon" class="style-icon">
+            <span>Japanese Irezumi</span>
+          </a>
+
+          <a class="style-card" href="work.html#black-gray">
+            <img src="./Images/about/tiger-1.png" alt="Black and gray icon" class="style-icon">
+            <span>Black & Gray</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+    
   </main>
 
   <footer>
