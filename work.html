@@ -161,28 +161,33 @@
       margin-bottom: 30px;
     }
 
-    .accent-line {
-      width: 100%;
-      height: 2px;
-      position: relative;
-      margin-bottom: 30px;
-      background: linear-gradient(
-        to right,
-        var(--red-accent),
-        rgba(178,58,42,.25),
-        transparent
-      );
-    }
 
-    .accent-line::after {
-      content: "✦";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--red-accent);
-      font-size: 13px;
-    }
+.accent-line {
+  width: 100%;
+  height: 2px;
+  position: relative;
+  margin-bottom: 30px;
+
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(178, 58, 42, 0.25) 20%,
+    #b23a2a 50%,
+    rgba(178, 58, 42, 0.25) 80%,
+    transparent 100%
+  );
+}
+
+.accent-line::after {
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--red-accent);
+  font-size: 13px;
+}
+
 
     /* BIO STYLING - MATCHING PARAGRAPHS */
 
