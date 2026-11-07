@@ -177,12 +177,29 @@
       font-size: 13px;
     }
 
+    /* UPDATED BIO STYLING */
+
     .artist-bio {
+      max-width: 540px;
       color: var(--muted);
-      font-size: 1.12rem;
-      line-height: 1.8;
-      max-width: 500px;
+      font-size: 1.05rem;
+      line-height: 1.85;
       margin-bottom: 35px;
+    }
+
+    .artist-bio p {
+      margin-bottom: 24px;
+    }
+
+    .artist-bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .artist-philosophy {
+      padding-left: 22px;
+      border-left: 2px solid var(--red-accent);
+      color: var(--text);
+      font-style: italic;
     }
 
     .artist-contact h2 {
@@ -375,6 +392,11 @@
 
       .artist-bio {
         font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .artist-philosophy {
+        padding-left: 16px;
       }
 
       .gallery-section {
@@ -442,7 +464,7 @@
   <div class="artist-photo-wrap">
 
     <img
-      src="./Images/portfolio/Eric.jpeg"
+      src="./Images/portfolio/ericface.jpeg"
       alt="Eric Saner"
       class="artist-profile-photo"
     >
@@ -461,11 +483,28 @@
 
     <div class="accent-line"></div>
 
-    <p class="artist-bio">
-      Eric Saner is a tattooer working at Double Dragon Tattoo
-      in Omaha, Nebraska. His work draws on traditional tattooing,
-      bold imagery, and an appreciation for the craft.
-    </p>
+    <!-- UPDATED ARTIST BIO -->
+
+    <div class="artist-bio">
+
+      <p>
+        A New York native and versatile shop veteran since 2010,
+        Eric specializes in bold, high-movement imagery rooted in
+        Western and Japanese traditional styles. Having worked in
+        tattoo shops across New York, Oakland, Seattle, and Florida,
+        he brings a wide range of experience and influences to his work.
+      </p>
+
+      <p class="artist-philosophy">
+        For Eric, tattooing is about more than the finished piece.
+        He believes the experience matters just as much, creating
+        a comfortable, welcoming environment where clients feel
+        heard and involved in the creative process. Through open
+        communication and collaboration, he works to build trust
+        and make each tattoo a positive, personal experience.
+      </p>
+
+    </div>
 
     <div class="artist-contact">
 
