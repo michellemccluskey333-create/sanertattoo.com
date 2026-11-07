@@ -1063,36 +1063,43 @@ body.intro-active {
       <div
         class="portfolio-album"
         aria-label="Selected artwork by Eric Saner"
-      >
+      
+<!-- AUTOMATIC PHOTO SLIDESHOW -->
 
-        <img
-          class="active"
-          src="./Images/portfolio/ericface.jpeg"
-             loading="lazy"
-        >
+<div class="portfolio-album"
+     aria-label="Selected artwork by Eric Saner">
 
-        <img
-          src="./Images/portfolio/train.jpeg"
-       alt="Custom artwork by Eric Saner"
-          loading="lazy"
-        >
+  <img
+    class="active"
+    src="./ericclient.jpeg"
+    alt="Eric Saner"
+    loading="lazy"
+  >
 
-        <img
-          src="./Images/portfolio/bruni.jpeg"
-          alt="Artwork by Brian Bruno"
-          loading="lazy"
-        >
+  <img
+    src="./train.jpeg"
+    alt="Custom artwork by Eric Saner"
+    loading="lazy"
+  >
 
-                <img
-          src="./Images/portfolio/shoulder.jpeg"
-         alt="Custom artwork by Eric Saner"
-          loading="lazy"
-        >
-        <img
-          src="./Images/portfolio/NewArm.jpeg"
-         alt="Custom artwork by Eric Saner"
-          loading="lazy"
-        >
+  <img
+    src="./Bruni.jpeg"
+    alt="Artwork by Brian Bruno"
+    loading="lazy"
+  >
+
+  <img
+    src="./shoulder.jpeg"
+    alt="Custom artwork by Eric Saner"
+    loading="lazy"
+  >
+
+  <img
+    src="./NewArm.jpeg"
+    alt="Custom artwork by Eric Saner"
+    loading="lazy"
+  >
+
       </div>
 
       <!-- PORTFOLIO INFORMATION -->
@@ -1385,55 +1392,42 @@ body.intro-active {
      NO MANUAL CONTROLS
      ========================================== -->
 
+
 <script>
 (() => {
-
   const album = document.querySelector(".portfolio-album");
-
   if (!album) return;
 
   const photos = Array.from(album.querySelectorAll("img"));
-
   if (photos.length < 2) return;
 
   let currentPhoto = 0;
 
-  // Show each photo for 3 seconds, then fade to next.
+  // Set a consistent starting state
+  photos.forEach((photo, index) => {
+    photo.classList.toggle("active", index === 0);
+    photo.style.zIndex = index === 0 ? "2" : "1";
+  });
 
+  // Automatically change images every 3 seconds
   window.setInterval(() => {
-
+    const previousPhoto = currentPhoto;
     const nextPhoto = (currentPhoto + 1) % photos.length;
 
-    // Bring next photo above the current one.
-
-    photos[nextPhoto].style.zIndex = "2";
-    photos[currentPhoto].style.zIndex = "1";
-
-    // Make sure the next photo begins transparent.
-
-    photos[nextPhoto].classList.remove("active");
-
-    // Force browser to register the starting opacity.
-
-    void photos[nextPhoto].offsetWidth;
-
-    // Fade the next photo in.
-
+    photos[nextPhoto].style.zIndex = "3";
     photos[nextPhoto].classList.add("active");
-
-    const previousPhoto = currentPhoto;
 
     window.setTimeout(() => {
       photos[previousPhoto].classList.remove("active");
-      photos[previousPhoto].style.zIndex = "0";
+      photos[previousPhoto].style.zIndex = "1";
+      photos[nextPhoto].style.zIndex = "2";
     }, 700);
 
     currentPhoto = nextPhoto;
-
   }, 3000);
-
 })();
 </script>
+
 
 <!-- ==========================================
      AUTOMATIC FOOTER YEAR
