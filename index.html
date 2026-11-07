@@ -780,7 +780,7 @@ body.intro-active {
   display: grid;
   place-items: center;
   overflow: hidden;
-  transition: opacity .85s ease;
+  transition: opacity 1.2s ease;
 }
 
 .transport-intro.is-done {
@@ -848,15 +848,15 @@ body.intro-active {
 }
 
 .transport-intro.beaming .transport-logo {
-  animation: transport-out 1.35s ease-in forwards;
+  animation: transport-out 1.55s ease-in forwards;
 }
 
 .transport-intro.beaming .transport-logo::before {
-  animation: transporter-lines 1.35s ease-in forwards;
+  animation: transporter-lines 1.55s ease-in forwards;
 }
 
 .transport-intro.beaming .transport-logo::after {
-  animation: transporter-glow 1.35s ease-in forwards;
+  animation: transporter-glow 1.55s ease-in forwards;
 }
 
 @keyframes transport-out {
@@ -1365,17 +1365,17 @@ body.intro-active {
 
   window.setTimeout(() => {
     intro.classList.add("beaming");
-  }, 1200);
+  }, 650);
 
   // Fade black screen to reveal homepage.
 
   window.setTimeout(() => {
     intro.classList.add("is-done");
-  }, 2350);
+  }, 2200);
 
   // Remove overlay completely.
 
-  window.setTimeout(finish, 3300);
+  window.setTimeout(finish, 3000);
 
 })();
 </script>
