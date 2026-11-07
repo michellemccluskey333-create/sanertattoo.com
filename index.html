@@ -12,8 +12,6 @@
 
   <style>
     
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
-    
     :root {
       --bg: #080806;
       --bg-soft: #11100d;
@@ -431,28 +429,31 @@
     }
 
 
+
 .transport-logo {
   position: relative;
   z-index: 2;
+  padding: 22px;
   width: 95vw;
-  padding: 10px;
 
-  font-family: 'Rajdhani', Impact, sans-serif;
-  font-size: clamp(5rem, 15vw, 15rem);
-  font-weight: 700;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 900;
   font-style: italic;
   text-transform: uppercase;
-  letter-spacing: -.045em;
+  letter-spacing: -.035em;
   line-height: 1;
 
   color: #f0c44f;
   text-align: center;
   white-space: nowrap;
 
+  transform: skewX(-8deg);
+
   text-shadow:
-    -4px 4px 0 #b23a2a,
-    -7px 7px 0 #771b15,
-    0 0 20px rgba(240,196,79,.18);
+    -5px 5px 0 #b23a2a,
+    -9px 9px 0 #8e211b,
+    0 0 25px rgba(240,196,79,.2);
 }
 
     .transport-logo::before,
@@ -557,9 +558,9 @@
 
 @media (max-width: 520px) {
   .transport-logo {
-    font-size: clamp(3rem, 15vw, 6rem);
-    letter-spacing: -.045em;
-    padding: 5px;
+    font-size: clamp(2.5rem, 12vw, 5rem);
+    letter-spacing: -.035em;
+    padding: 10px;
   }
 }
     @media (prefers-reduced-motion: reduce) {
