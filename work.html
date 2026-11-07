@@ -100,12 +100,13 @@
       margin: 0 8px;
       font-size: 12px;
     }
+
     /* SCROLL POSITION FOR NAVIGATION */
 
-#about,
-#gallery {
-  scroll-margin-top: 90px;
-}
+    #about,
+    #gallery {
+      scroll-margin-top: 90px;
+    }
 
     /* ARTIST PROFILE */
 
@@ -183,7 +184,7 @@
       font-size: 13px;
     }
 
-    /* UPDATED BIO STYLING */
+    /* BIO STYLING - MATCHING PARAGRAPHS */
 
     .artist-bio {
       max-width: 540px;
@@ -202,10 +203,10 @@
     }
 
     .artist-philosophy {
-      padding-left: 22px;
-      border-left: 2px solid var(--red-accent);
-      color: var(--text);
-      font-style: italic;
+      padding-left: 0;
+      border-left: none;
+      color: var(--muted);
+      font-style: normal;
     }
 
     .artist-contact h2 {
@@ -258,6 +259,13 @@
     }
 
     /* CONTINUOUS TATTOO GALLERY */
+
+    .gallery-heading {
+      color: var(--text);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 30px;
+    }
 
     .gallery-section {
       border-top: 1px solid var(--border);
@@ -402,7 +410,7 @@
       }
 
       .artist-philosophy {
-        padding-left: 16px;
+        padding-left: 0;
       }
 
       .gallery-section {
@@ -450,13 +458,13 @@
       <span class="nav-dot">✦</span>
     </a>
 
-<nav class="nav-links" aria-label="Main navigation">
-  <a href="#gallery">Work</a>
-  <span class="nav-dot">✦</span>
-  <a href="#about">About</a>
-  <span class="nav-dot">✦</span>
-  <a href="index.html#booking">Booking</a>
-</nav>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#gallery">Work</a>
+      <span class="nav-dot">✦</span>
+      <a href="#about">About</a>
+      <span class="nav-dot">✦</span>
+      <a href="index.html#booking">Booking</a>
+    </nav>
 
   </div>
 </header>
@@ -489,7 +497,7 @@
 
     <div class="accent-line"></div>
 
-    <!-- UPDATED ARTIST BIO -->
+    <!-- ARTIST BIO -->
 
     <div class="artist-bio">
 
@@ -547,6 +555,8 @@
 <section class="gallery-section" id="gallery">
 
   <div class="site-wrap">
+
+    <h2 class="gallery-heading">Selected Work</h2>
 
     <div class="tattoo-gallery">
 
