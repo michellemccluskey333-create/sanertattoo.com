@@ -14,6 +14,50 @@
 
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<!-- Decide when to play NO SLEEP before the page renders -->
+<script>
+(() => {
+  const navigation = performance.getEntriesByType("navigation")[0];
+  const isRefresh = navigation?.type === "reload";
+  const hasSectionLink = Boolean(window.location.hash);
+  let seenIntro = false;
+
+  try {
+    seenIntro = sessionStorage.getItem("eric-intro-seen") === "yes";
+    sessionStorage.setItem("eric-intro-seen", "yes");
+  } catch (error) {
+    // Continue normally if browser storage is unavailable.
+  }
+
+  const playIntro = isRefresh || (!seenIntro && !hasSectionLink);
+
+  if (playIntro) {
+    document.documentElement.classList.add("play-intro");
+  }
+
+  if (isRefresh) {
+    // Refresh always returns to the hero.
+    if (window.location.hash) {
+      history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo(0, 0);
+
+    window.addEventListener("pageshow", () => {
+      window.scrollTo(0, 0);
+    });
+  }
+})();
+</script>
+
 <style>
 
 /* ==========================================
@@ -241,8 +285,6 @@ section {
   border-top: 1px solid var(--border);
 }
 
-/* Reduced top spacing for Selected Work only */
-
 #work {
   padding-top: 35px;
 }
@@ -438,8 +480,6 @@ section {
   max-width: 420px;
   margin-bottom: 28px;
 }
-
-/* Single portfolio button */
 
 .portfolio-buttons {
   display: flex;
@@ -871,19 +911,28 @@ footer {
    NO SLEEP TRANSPORTER INTRO
    ============================================= */
 
-body.intro-active {
+/* Lock scrolling only while NO SLEEP is playing */
+
+html.play-intro,
+html.play-intro body {
   overflow: hidden;
 }
+
+/* Hide intro unless the loading script enables it */
 
 .transport-intro {
   position: fixed;
   inset: 0;
   z-index: 9999;
   background: #000;
-  display: grid;
+  display: none;
   place-items: center;
   overflow: hidden;
   transition: opacity 1.2s ease;
+}
+
+html.play-intro .transport-intro {
+  display: grid;
 }
 
 .transport-intro.is-done {
@@ -1046,7 +1095,7 @@ body.intro-active {
 </style>
 </head>
 
-<body class="intro-active">
+<body>
 
 <!-- ==========================================
      NO SLEEP INTRO
@@ -1077,7 +1126,7 @@ body.intro-active {
       <span class="nav-dot">✦</span>
 
       <a href="work.html#gallery">Gallery</a>
-     
+
       <span class="nav-dot">✦</span>
 
       <a href="#booking">Booking</a>
@@ -1437,35 +1486,33 @@ body.intro-active {
 
 <script>
 (() => {
-
   const intro = document.querySelector(".transport-intro");
+  const shouldPlay = document.documentElement.classList.contains("play-intro");
 
   const finish = () => {
-    document.body.classList.remove("intro-active");
+    document.documentElement.classList.remove("play-intro");
     intro?.remove();
   };
 
-  if (!intro) {
+  // Returning from another page or opening a section link:
+  // show the homepage immediately.
+  if (!intro || !shouldPlay) {
     finish();
     return;
   }
 
   // Hold title, then transport it away.
-
   window.setTimeout(() => {
     intro.classList.add("beaming");
   }, 650);
 
   // Fade black screen to reveal homepage.
-
   window.setTimeout(() => {
     intro.classList.add("is-done");
   }, 2200);
 
   // Remove overlay completely.
-
   window.setTimeout(finish, 3400);
-
 })();
 </script>
 
@@ -1485,13 +1532,13 @@ body.intro-active {
 
   let currentPhoto = 0;
 
-  // Set a consistent starting state
+  // Set a consistent starting state.
   photos.forEach((photo, index) => {
     photo.classList.toggle("active", index === 0);
     photo.style.zIndex = index === 0 ? "2" : "1";
   });
 
-  // Automatically change images every 3 seconds
+  // Automatically change images every 3 seconds.
   window.setInterval(() => {
     const previousPhoto = currentPhoto;
     const nextPhoto = (currentPhoto + 1) % photos.length;
