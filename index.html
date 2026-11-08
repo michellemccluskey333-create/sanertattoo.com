@@ -764,6 +764,20 @@ footer {
     font-size: clamp(2.4rem, 9vw, 3.3rem);
   }
 
+  /* Center homepage section headings on phones only */
+
+  .hero .eyebrow,
+  .hero h1,
+  .portfolio-copy .eyebrow,
+  .portfolio-copy h2 {
+    text-align: center;
+  }
+
+  .portfolio-copy .eyebrow,
+  .portfolio-copy h2 {
+    width: 100%;
+  }
+
   .portfolio-buttons {
     flex-direction: column;
     align-items: flex-start;
@@ -984,23 +998,6 @@ body.intro-active {
     font-size: clamp(2.5rem, 12vw, 5rem);
     letter-spacing: -.035em;
     padding: 10px;
-  }
-}
-
-/* Respect accessibility settings */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .transport-intro {
-    display: none;
-  }
-
-  body.intro-active {
-    overflow: auto;
-  }
-
-  .portfolio-album img {
-    transition: none;
   }
 }
 
@@ -1401,25 +1398,12 @@ body.intro-active {
 
   const intro = document.querySelector(".transport-intro");
 
-  const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
   const finish = () => {
     document.body.classList.remove("intro-active");
     intro?.remove();
   };
 
-  // Respect reduced-motion preferences.
-  // Otherwise play the intro on mobile and desktop.
-  // Only skip for direct links to content sections.
-
-  const directSectionLink = [
-    "#booking",
-    "#work"
-  ].includes(window.location.hash.toLowerCase());
-
-  if (!intro || reducedMotion || directSectionLink) {
+  if (!intro) {
     finish();
     return;
   }
