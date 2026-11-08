@@ -368,10 +368,7 @@ section {
 
 .portfolio-feature {
   display: grid;
-
-  /* Keep photos and text balanced */
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-
   align-items: center;
   gap: clamp(40px, 6vw, 90px);
   padding: 30px 0;
@@ -419,14 +416,11 @@ section {
   margin-bottom: 18px;
 }
 
-/* Smaller, more refined heading */
-
 .portfolio-copy h2 {
   font-size: clamp(2.5rem, 3.8vw, 4rem);
   line-height: 1.08;
   letter-spacing: -.035em;
   color: var(--text);
-
   text-shadow: 2px 2px 0 rgba(178,58,42,.32);
   margin-bottom: 8px;
 }
@@ -455,7 +449,7 @@ section {
 }
 
 /* ==========================================
-   INSTAGRAM SECTION - REDESIGNED
+   INSTAGRAM SECTION
    ========================================== */
 
 .portfolio-social {
@@ -474,8 +468,6 @@ section {
   margin-bottom: 18px;
 }
 
-/* Horizontal layout */
-
 .portfolio-social-links {
   display: flex;
   align-items: center;
@@ -483,8 +475,6 @@ section {
   column-gap: 18px;
   row-gap: 12px;
 }
-
-/* Remove standard hyperlink appearance */
 
 .portfolio-social-links a {
   display: inline-flex;
@@ -496,15 +486,12 @@ section {
   color: var(--text);
   text-decoration: none;
   white-space: nowrap;
-
   transition: color .2s ease;
 }
 
 .portfolio-social-links a:hover {
   color: var(--accent);
 }
-
-/* Real Instagram icon */
 
 .instagram-icon {
   width: 20px;
@@ -516,8 +503,6 @@ section {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-/* Vertical gold separator */
 
 .social-separator {
   width: 1px;
@@ -681,7 +666,7 @@ footer {
     width: min(100% - 28px, 1120px);
   }
 
-  /* Center the mobile header in two rows */
+  /* Mobile navigation */
 
   .nav {
     flex-direction: column;
@@ -731,6 +716,13 @@ footer {
     padding: 30px;
   }
 
+  /* Center BOOKING label on mobile */
+
+  #booking .eyebrow {
+    text-align: center;
+    width: 100%;
+  }
+
   .hero.site-wrap {
     min-height: 740px;
     padding: 70px 20px 55px;
@@ -764,13 +756,15 @@ footer {
     font-size: clamp(2.4rem, 9vw, 3.3rem);
   }
 
-  /* Center homepage section headings on phones only */
+  /* Center Made to Last accent line */
 
-  /* Center Made to Last accent line on mobile */
-.portfolio-copy .accent-line {
-  margin-left: auto;
-  margin-right: auto;
-}
+  .portfolio-copy .accent-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center homepage section headings */
+
   .hero .eyebrow,
   .hero h1,
   .portfolio-copy .eyebrow,
@@ -783,18 +777,46 @@ footer {
     width: 100%;
   }
 
-.portfolio-buttons {
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
+  /* Center Bio & Gallery button */
 
-  /* Stack Instagram handles neatly */
+  .portfolio-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Instagram handles */
 
   .portfolio-social-links {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+  }
+
+  /* Center Follow on Instagram heading */
+
+  .portfolio-social-title {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Center Instagram handles */
+
+  .portfolio-social-links {
+    align-items: center;
+  }
+
+  .portfolio-social-links a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Center Request Consultation button */
+
+  .booking-actions {
+    justify-content: center;
+    width: 100%;
   }
 
   .social-separator {
