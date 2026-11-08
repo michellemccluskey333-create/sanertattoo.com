@@ -161,33 +161,31 @@
       margin-bottom: 30px;
     }
 
+    .accent-line {
+      width: 100%;
+      height: 2px;
+      position: relative;
+      margin-bottom: 30px;
 
-.accent-line {
-  width: 100%;
-  height: 2px;
-  position: relative;
-  margin-bottom: 30px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(178, 58, 42, 0.25) 20%,
+        #b23a2a 50%,
+        rgba(178, 58, 42, 0.25) 80%,
+        transparent 100%
+      );
+    }
 
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(178, 58, 42, 0.25) 20%,
-    #b23a2a 50%,
-    rgba(178, 58, 42, 0.25) 80%,
-    transparent 100%
-  );
-}
-
-.accent-line::after {
-  content: "✦";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--red-accent);
-  font-size: 13px;
-}
-
+    .accent-line::after {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--red-accent);
+      font-size: 13px;
+    }
 
     /* BIO STYLING - MATCHING PARAGRAPHS */
 
@@ -386,19 +384,50 @@
         width: calc(100% - 28px);
       }
 
+      /* Center mobile header in two rows */
+
       .nav {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 13px;
+        padding: 16px 0 17px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        font-size: clamp(.72rem, 3.65vw, .95rem);
+        letter-spacing: .12em;
+      }
+
+      .logo .nav-dot {
+        margin: 0 10px;
+        flex-shrink: 0;
       }
 
       .nav-links {
-        gap: 10px;
-        font-size: .72rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        font-size: clamp(.67rem, 3.15vw, .82rem);
+        letter-spacing: .06em;
       }
 
-      .nav-dot {
-        margin: 0 4px;
+      .nav-links a {
+        white-space: nowrap;
+      }
+
+      .nav-links .nav-dot {
+        margin: 0 clamp(9px, 3vw, 16px);
+        flex-shrink: 0;
       }
 
       .artist-profile-photo {
@@ -407,6 +436,20 @@
 
       .artist-profile h1 {
         font-size: 3.2rem;
+      }
+
+      /* Center artist headings on mobile only */
+
+      .artist-profile-copy .section-kicker,
+      .artist-profile-copy h1,
+      .artist-profile-copy .artist-style {
+        text-align: center;
+      }
+
+      /* Center Selected Work heading on mobile only */
+
+      .gallery-heading {
+        text-align: center;
       }
 
       .artist-bio {
