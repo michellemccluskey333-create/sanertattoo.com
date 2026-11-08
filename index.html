@@ -663,6 +663,69 @@ section {
   gap: 14px;
 }
 
+/* ==========================================
+   DOUBLE DRAGON SHOP LOCATION AND HOURS
+   ========================================== */
+
+.shop-details {
+  width: 100%;
+  max-width: 680px;
+  margin: 42px auto 0;
+  padding-top: 30px;
+  border-top: 1px solid rgba(240,196,79,.28);
+  text-align: center;
+}
+
+.shop-details-heading {
+  font-family: Arial, sans-serif;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.shop-detail {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.shop-detail-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  font-size: 1.15rem;
+}
+
+.shop-detail a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(240,196,79,.55);
+  text-underline-offset: 4px;
+  transition: color .2s ease;
+}
+
+.shop-detail a:hover,
+.shop-detail a:focus {
+  color: var(--accent);
+}
+
+.shop-detail-hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shop-detail-hours span:last-child {
+  color: var(--muted);
+}
+
 /* Instagram is now its own centered section */
 
 .instagram-section .portfolio-social {
@@ -942,6 +1005,18 @@ footer {
 
   #double-dragon {
     scroll-margin-top: 135px;
+  }
+
+  /* Mobile shop location and hours */
+
+  .shop-details {
+    margin-top: 34px;
+    padding-top: 26px;
+  }
+
+  .shop-detail {
+    font-size: .93rem;
+    gap: 9px;
   }
 }
 
@@ -1447,6 +1522,70 @@ html.play-intro .transport-intro {
       >
         Explore Double Dragon
       </a>
+
+    </div>
+
+    <!-- SHOP LOCATION, HOURS AND CONTACT -->
+
+    <div class="shop-details">
+
+      <div class="shop-details-heading">
+        Visit the Shop
+      </div>
+
+      <!-- ADDRESS -->
+
+      <div class="shop-detail">
+
+        <span class="shop-detail-icon" aria-hidden="true">
+          📍
+        </span>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=711+N+120th+St+Omaha+NE+68154"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          711 N 120th St, Omaha, NE 68154
+        </a>
+
+      </div>
+
+      <!-- HOURS AND WALK-INS -->
+
+      <div class="shop-detail">
+
+        <span class="shop-detail-icon" aria-hidden="true">
+          ◷
+        </span>
+
+        <div class="shop-detail-hours">
+
+          <span>
+            Tuesday–Sunday: 11 AM–7 PM · Walk-ins welcome
+          </span>
+
+          <span>
+            Monday: By appointment only
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- PHONE -->
+
+      <div class="shop-detail">
+
+        <span class="shop-detail-icon" aria-hidden="true">
+          ☎
+        </span>
+
+        <a href="tel:+14024037554">
+          (402) 403-7554
+        </a>
+
+      </div>
 
     </div>
 
